@@ -1,21 +1,21 @@
 /* ===================================
-   NOMA - Moroccan-Inspired Styling
+   NOMA - Luxurious Moroccan Design
    =================================== */
 
-/* CSS Variables - Moroccan Color Palette */
+/* CSS Variables - Refined Luxury Palette */
 :root {
-    --primary-red: #C1272D;
-    --secondary-green: #006233;
+    --royal-blue: #1E3A5F;
+    --soft-blue: #4A90A4;
+    --rose-pink: #E8A4A2;
+    --deep-pink: #C25A74;
+    --champagne: #F5E6D3;
     --gold: #D4AF37;
-    --dark-gold: #B8941E;
-    --cream: #F5F1E8;
-    --terracotta: #D4694B;
-    --deep-blue: #003B5C;
-    --sand: #E8D5B5;
-    --dark-text: #2C1810;
-    --light-text: #FFFFFF;
-    --gray: #5A5A5A;
-    --light-gray: #F0F0F0;
+    --rich-gold: #C19A2E;
+    --cream: #FAF7F2;
+    --warm-beige: #E8D5C4;
+    --charcoal: #2C2C2C;
+    --soft-gray: #6B6B6B;
+    --light: #FFFFFF;
 }
 
 /* Reset & Base Styles */
@@ -31,33 +31,37 @@ html {
 
 body {
     font-family: 'Lato', sans-serif;
-    color: var(--dark-text);
-    line-height: 1.6;
+    color: var(--charcoal);
+    line-height: 1.8;
     background-color: var(--cream);
+    letter-spacing: 0.3px;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', serif;
-    font-weight: 700;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 0 40px;
 }
 
 /* ===================================
    Navigation
    =================================== */
 .navbar {
-    background: linear-gradient(135deg, var(--primary-red), var(--secondary-green));
-    padding: 1rem 0;
+    background: rgba(30, 58, 95, 0.95);
+    backdrop-filter: blur(20px);
+    padding: 1.2rem 0;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.08);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
 }
 
 .navbar .container {
@@ -68,34 +72,37 @@ h1, h2, h3, h4, h5, h6 {
 
 .nav-brand .logo-text {
     font-family: 'Playfair Display', serif;
-    font-size: 2rem;
+    font-size: 2.2rem;
     font-weight: 700;
     color: var(--gold);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    letter-spacing: 3px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
 }
 
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 3rem;
 }
 
 .nav-link {
-    color: var(--light-text);
+    color: var(--champagne);
     text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
+    font-weight: 400;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
     position: relative;
 }
 
 .nav-link::after {
     content: '';
     position: absolute;
-    bottom: -5px;
-    left: 0;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
     width: 0;
-    height: 2px;
+    height: 1px;
     background-color: var(--gold);
     transition: width 0.3s ease;
 }
@@ -117,8 +124,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .hamburger span {
     width: 25px;
-    height: 3px;
-    background-color: var(--light-text);
+    height: 2px;
+    background-color: var(--gold);
     transition: 0.3s;
 }
 
@@ -127,13 +134,13 @@ h1, h2, h3, h4, h5, h6 {
    =================================== */
 .hero {
     height: 100vh;
-    background: linear-gradient(135deg, var(--primary-red) 0%, var(--secondary-green) 100%);
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 60px;
+    margin-top: 70px;
     overflow: hidden;
+    background: linear-gradient(135deg, var(--royal-blue) 0%, var(--soft-blue) 100%);
 }
 
 .hero-overlay {
@@ -142,61 +149,52 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     width: 100%;
     height: 100%;
-    background: repeating-linear-gradient(
-        45deg,
-        transparent,
-        transparent 10px,
-        rgba(255, 255, 255, 0.03) 10px,
-        rgba(255, 255, 255, 0.03) 20px
-    );
+    background: radial-gradient(circle at 30% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 50%, rgba(232, 164, 162, 0.08) 0%, transparent 50%);
 }
 
-.moroccan-pattern-left,
-.moroccan-pattern-right {
+.hero-pattern {
     position: absolute;
-    width: 300px;
-    height: 300px;
-    background-image: radial-gradient(circle, var(--gold) 2px, transparent 2px);
-    background-size: 30px 30px;
-    opacity: 0.1;
-}
-
-.moroccan-pattern-left {
-    top: 10%;
-    left: 5%;
-    transform: rotate(45deg);
-}
-
-.moroccan-pattern-right {
-    bottom: 10%;
-    right: 5%;
-    transform: rotate(-45deg);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('Pic_Zellij_8.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    mix-blend-mode: overlay;
 }
 
 .hero-content {
     text-align: center;
-    color: var(--light-text);
+    color: var(--light);
     z-index: 2;
-    animation: fadeInUp 1s ease;
+    animation: fadeInUp 1.2s ease;
+    max-width: 900px;
 }
 
 .hero-title {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+    font-size: 7rem;
+    margin-bottom: 1.5rem;
     color: var(--gold);
+    letter-spacing: 20px;
+    font-weight: 700;
+    text-shadow: 2px 2px 30px rgba(0, 0, 0, 0.3);
 }
 
 .hero-subtitle {
-    font-size: 1.5rem;
-    margin-bottom: 2rem;
+    font-size: 1.4rem;
+    margin-bottom: 3rem;
     font-weight: 300;
+    color: var(--champagne);
+    letter-spacing: 3px;
 }
 
 @keyframes fadeInUp {
     from {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(40px);
     }
     to {
         opacity: 1;
@@ -209,50 +207,56 @@ h1, h2, h3, h4, h5, h6 {
    =================================== */
 .btn {
     display: inline-block;
-    padding: 15px 40px;
+    padding: 16px 50px;
     text-decoration: none;
-    border-radius: 30px;
-    font-weight: 600;
-    transition: all 0.3s ease;
+    border-radius: 50px;
+    font-weight: 500;
+    transition: all 0.4s ease;
     border: none;
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 0.95rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
 .btn-primary {
     background: var(--gold);
-    color: var(--dark-text);
-    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
+    color: var(--royal-blue);
+    box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
 }
 
 .btn-primary:hover {
-    background: var(--dark-gold);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(212, 175, 55, 0.6);
+    background: var(--rich-gold);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(212, 175, 55, 0.5);
 }
 
 /* ===================================
    Section Styles
    =================================== */
 section {
-    padding: 80px 0;
+    padding: 120px 0;
 }
 
 .section-header {
     text-align: center;
-    margin-bottom: 60px;
+    margin-bottom: 80px;
+    position: relative;
+    z-index: 1;
 }
 
 .section-title {
-    font-size: 3rem;
-    color: var(--primary-red);
-    margin-bottom: 15px;
+    font-size: 3.5rem;
+    color: var(--royal-blue);
+    margin-bottom: 20px;
+    font-weight: 600;
+    letter-spacing: 2px;
 }
 
 .title-underline {
-    width: 100px;
-    height: 4px;
-    background: linear-gradient(90deg, var(--primary-red), var(--gold), var(--secondary-green));
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--gold), var(--rose-pink));
     margin: 0 auto;
     border-radius: 2px;
 }
@@ -261,181 +265,282 @@ section {
    About Section
    =================================== */
 .about {
-    background-color: var(--light-text);
+    background: linear-gradient(to bottom, var(--cream), var(--champagne));
+    position: relative;
+}
+
+.about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-image: url('Pic_Zellij_9.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.08;
+    pointer-events: none;
+}
+
+.about-text {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+    position: relative;
+    z-index: 1;
 }
 
 .about-text p {
-    font-size: 1.2rem;
-    line-height: 1.8;
-    margin-bottom: 1.5rem;
-    color: var(--gray);
+    font-size: 1.4rem;
+    line-height: 2;
+    color: var(--soft-gray);
+    font-weight: 300;
 }
 
 .stats {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 40px;
-    margin-top: 50px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 50px;
+    margin-top: 80px;
+    position: relative;
+    z-index: 1;
 }
 
 .stat-item {
     text-align: center;
-    padding: 30px;
-    background: linear-gradient(135deg, var(--primary-red), var(--secondary-green));
-    border-radius: 15px;
-    color: var(--light-text);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    padding: 50px 30px;
+    background: var(--light);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
+    transition: all 0.4s ease;
+    border-top: 3px solid var(--gold);
 }
 
 .stat-item:hover {
-    transform: translateY(-10px);
+    transform: translateY(-15px);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
 }
 
 .stat-item h3 {
-    font-size: 3rem;
-    color: var(--gold);
-    margin-bottom: 10px;
+    font-size: 4rem;
+    background: linear-gradient(135deg, var(--soft-blue), var(--royal-blue));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 15px;
+    font-weight: 700;
 }
 
 .stat-item p {
     font-size: 1.1rem;
+    color: var(--soft-gray);
+    letter-spacing: 1px;
 }
 
 /* ===================================
    Purpose Section
    =================================== */
 .purpose {
-    background: linear-gradient(to bottom, var(--cream), var(--sand));
+    background: var(--light);
+    position: relative;
+    overflow: hidden;
+}
+
+.purpose::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 45%;
+    height: 100%;
+    background-image: url('Pic_Zellij_5.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.08;
+    pointer-events: none;
 }
 
 .purpose-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    position: relative;
+    z-index: 1;
 }
 
 .purpose-card {
-    background: var(--light-text);
-    padding: 40px 30px;
-    border-radius: 15px;
+    background: linear-gradient(135deg, rgba(74, 144, 164, 0.05), rgba(232, 164, 162, 0.05));
+    padding: 60px 40px;
+    border-radius: 20px;
     text-align: center;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
-    border-top: 5px solid var(--gold);
+    transition: all 0.4s ease;
+    border: 1px solid rgba(212, 175, 55, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+.purpose-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--soft-blue), var(--rose-pink), var(--gold));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.purpose-card:hover::before {
+    transform: scaleX(1);
 }
 
 .purpose-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-    border-top-color: var(--primary-red);
-}
-
-.purpose-icon {
-    font-size: 4rem;
-    margin-bottom: 20px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, rgba(74, 144, 164, 0.08), rgba(232, 164, 162, 0.08));
 }
 
 .purpose-card h3 {
-    color: var(--primary-red);
-    margin-bottom: 15px;
-    font-size: 1.5rem;
+    color: var(--royal-blue);
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+    font-weight: 600;
 }
 
 .purpose-card p {
-    color: var(--gray);
+    color: var(--soft-gray);
     line-height: 1.8;
+    font-size: 1.05rem;
 }
 
 /* ===================================
    Help Section
    =================================== */
 .help {
-    background-color: var(--light-text);
+    background: linear-gradient(to bottom, var(--champagne), var(--warm-beige));
+    position: relative;
 }
 
-.help-text {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.help-text p {
-    font-size: 1.2rem;
-    color: var(--gray);
+.help::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background-image: url('Pic_Zellij_6.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.1;
+    pointer-events: none;
 }
 
 .help-services {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    position: relative;
+    z-index: 1;
 }
 
 .service-item {
-    padding: 30px;
-    background: linear-gradient(135deg, rgba(193, 39, 45, 0.05), rgba(0, 98, 51, 0.05));
-    border-radius: 15px;
-    border-left: 5px solid var(--gold);
-    transition: all 0.3s ease;
+    padding: 50px 40px;
+    background: var(--light);
+    border-radius: 20px;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+    border-left: 4px solid var(--gold);
 }
 
 .service-item:hover {
-    border-left-color: var(--primary-red);
     transform: translateX(10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 12px 45px rgba(0, 0, 0, 0.12);
+    border-left-color: var(--soft-blue);
 }
 
 .service-item h4 {
-    color: var(--secondary-green);
+    color: var(--royal-blue);
     margin-bottom: 15px;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
+    font-weight: 600;
 }
 
 .service-item p {
-    color: var(--gray);
+    color: var(--soft-gray);
     line-height: 1.8;
+    font-size: 1.05rem;
 }
 
 /* ===================================
    Location/Map Section
    =================================== */
 .location {
-    background: linear-gradient(to bottom, var(--cream), var(--sand));
+    background: var(--light);
 }
 
 .location-content {
     display: grid;
     grid-template-columns: 1fr 2fr;
-    gap: 40px;
+    gap: 60px;
     align-items: start;
 }
 
 .location-info {
-    background: var(--light-text);
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, var(--champagne), var(--warm-beige));
+    padding: 60px 50px;
+    border-radius: 25px;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+}
+
+.location-info::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('Pic_Zellij_4.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.12;
+    border-radius: 25px;
 }
 
 .location-info h3 {
-    color: var(--primary-red);
-    margin-bottom: 25px;
+    color: var(--royal-blue);
+    margin-bottom: 35px;
     font-size: 2rem;
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
 }
 
 .location-info p {
-    margin-bottom: 20px;
-    color: var(--gray);
-    line-height: 1.8;
+    margin-bottom: 25px;
+    color: var(--soft-gray);
+    line-height: 2;
+    font-size: 1.05rem;
+    position: relative;
+    z-index: 1;
 }
 
-.location-info strong {
-    color: var(--dark-text);
+.location-hours {
+    color: var(--charcoal) !important;
+    font-weight: 500;
+    position: relative;
+    z-index: 1;
 }
 
 .map-container {
-    border-radius: 15px;
+    border-radius: 25px;
     overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+    border: 2px solid var(--gold);
 }
 
 .map-container iframe {
@@ -446,119 +551,149 @@ section {
    Contact Section
    =================================== */
 .contact {
-    background-color: var(--light-text);
+    background: linear-gradient(135deg, var(--royal-blue), var(--soft-blue));
+    position: relative;
+}
+
+.contact::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('Pic_Zellij_7.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.08;
+    mix-blend-mode: overlay;
+}
+
+.contact .section-title {
+    color: var(--gold);
 }
 
 .contact-content {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 80px;
+    position: relative;
+    z-index: 1;
 }
 
 .contact-info h3 {
-    color: var(--primary-red);
-    margin-bottom: 20px;
-    font-size: 2rem;
-}
-
-.contact-info > p {
-    color: var(--gray);
-    font-size: 1.1rem;
+    color: var(--champagne);
     margin-bottom: 40px;
-    line-height: 1.8;
+    font-size: 2.2rem;
+    font-weight: 600;
 }
 
 .contact-methods {
     display: flex;
     flex-direction: column;
-    gap: 30px;
-}
-
-.contact-method {
-    display: flex;
-    gap: 20px;
-    align-items: start;
-}
-
-.contact-icon {
-    font-size: 2.5rem;
-    flex-shrink: 0;
+    gap: 40px;
 }
 
 .contact-method h4 {
-    color: var(--secondary-green);
-    margin-bottom: 5px;
+    color: var(--gold);
+    margin-bottom: 10px;
+    font-size: 1.3rem;
+    letter-spacing: 1px;
 }
 
 .contact-method p {
-    color: var(--gray);
+    color: var(--champagne);
+    font-size: 1.05rem;
 }
 
 .contact-form {
-    background: linear-gradient(135deg, rgba(193, 39, 45, 0.05), rgba(0, 98, 51, 0.05));
-    padding: 40px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.98);
+    padding: 60px 50px;
+    border-radius: 25px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
 }
 
 .form-group {
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 8px;
-    color: var(--dark-text);
-    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--royal-blue);
+    font-weight: 500;
+    letter-spacing: 0.5px;
 }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
-    padding: 15px;
-    border: 2px solid var(--sand);
-    border-radius: 8px;
+    padding: 16px 20px;
+    border: 2px solid var(--warm-beige);
+    border-radius: 12px;
     font-family: 'Lato', sans-serif;
     font-size: 1rem;
-    transition: border-color 0.3s ease;
+    transition: all 0.3s ease;
+    background: var(--cream);
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
     border-color: var(--gold);
+    background: var(--light);
+    box-shadow: 0 5px 20px rgba(212, 175, 55, 0.15);
 }
 
 .contact-form .btn {
     width: 100%;
-    margin-top: 10px;
+    margin-top: 15px;
 }
 
 /* ===================================
    Footer
    =================================== */
 .footer {
-    background: linear-gradient(135deg, var(--deep-blue), var(--secondary-green));
-    color: var(--light-text);
-    padding: 60px 0 20px;
+    background: linear-gradient(135deg, var(--charcoal), var(--royal-blue));
+    color: var(--champagne);
+    padding: 80px 0 30px;
+    position: relative;
+}
+
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('Pic_Zellij_9.jpg');
+    background-size: cover;
+    opacity: 0.03;
 }
 
 .footer-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-    margin-bottom: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 60px;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 1;
 }
 
 .footer-section h3,
 .footer-section h4 {
     color: var(--gold);
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    font-weight: 600;
+    letter-spacing: 1px;
 }
 
 .footer-section p {
-    margin-bottom: 10px;
-    line-height: 1.8;
+    margin-bottom: 12px;
+    line-height: 2;
+    font-size: 0.95rem;
 }
 
 .footer-section ul {
@@ -566,13 +701,14 @@ section {
 }
 
 .footer-section ul li {
-    margin-bottom: 10px;
+    margin-bottom: 12px;
 }
 
 .footer-section a {
-    color: var(--light-text);
+    color: var(--champagne);
     text-decoration: none;
     transition: color 0.3s ease;
+    font-size: 0.95rem;
 }
 
 .footer-section a:hover {
@@ -582,30 +718,39 @@ section {
 .social-links {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
 }
 
 .footer-bottom {
     text-align: center;
-    padding-top: 30px;
-    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 40px;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    position: relative;
+    z-index: 1;
+    font-size: 0.9rem;
 }
 
 /* ===================================
    Responsive Design
    =================================== */
 @media (max-width: 968px) {
+    .container {
+        padding: 0 30px;
+    }
+
     .nav-menu {
         position: fixed;
         left: -100%;
-        top: 60px;
+        top: 70px;
         flex-direction: column;
-        background: linear-gradient(135deg, var(--primary-red), var(--secondary-green));
+        background: rgba(30, 58, 95, 0.98);
+        backdrop-filter: blur(20px);
         width: 100%;
         text-align: center;
-        transition: 0.3s;
-        box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
-        padding: 20px 0;
+        transition: 0.4s;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        padding: 40px 0;
+        gap: 2rem;
     }
 
     .nav-menu.active {
@@ -617,15 +762,20 @@ section {
     }
 
     .hero-title {
-        font-size: 2.5rem;
+        font-size: 4.5rem;
+        letter-spacing: 10px;
     }
 
     .hero-subtitle {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
     .section-title {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
+    }
+
+    section {
+        padding: 80px 0;
     }
 
     .location-content,
@@ -640,20 +790,30 @@ section {
 }
 
 @media (max-width: 600px) {
+    .container {
+        padding: 0 20px;
+    }
+
     .hero {
-        height: 70vh;
+        height: 80vh;
     }
 
     .hero-title {
-        font-size: 2rem;
+        font-size: 3rem;
+        letter-spacing: 8px;
     }
 
     .hero-subtitle {
         font-size: 1rem;
+        letter-spacing: 2px;
     }
 
     .section-title {
-        font-size: 1.8rem;
+        font-size: 2rem;
+    }
+
+    section {
+        padding: 60px 0;
     }
 
     .stats {
@@ -661,11 +821,16 @@ section {
     }
 
     .stat-item h3 {
-        font-size: 2rem;
+        font-size: 3rem;
     }
 
     .nav-brand .logo-text {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
+        letter-spacing: 4px;
+    }
+
+    .contact-form,
+    .location-info {
+        padding: 40px 30px;
     }
 }
-

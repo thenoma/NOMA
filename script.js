@@ -38,11 +38,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 const navbar = document.querySelector('.navbar');
 window.addEventListener('scroll', () => {
     if (window.scrollY > 100) {
-        navbar.style.background = 'linear-gradient(135deg, rgba(193, 39, 45, 0.95), rgba(0, 98, 51, 0.95))';
-        navbar.style.backdropFilter = 'blur(10px)';
+        navbar.style.background = 'rgba(30, 58, 95, 0.98)';
+        navbar.style.backdropFilter = 'blur(20px)';
     } else {
-        navbar.style.background = 'linear-gradient(135deg, var(--primary-red), var(--secondary-green))';
-        navbar.style.backdropFilter = 'none';
+        navbar.style.background = 'rgba(30, 58, 95, 0.95)';
+        navbar.style.backdropFilter = 'blur(20px)';
     }
 });
 
@@ -83,7 +83,6 @@ if (contactForm) {
         const formData = {
             name: document.getElementById('name').value,
             email: document.getElementById('email').value,
-            phone: document.getElementById('phone').value,
             subject: document.getElementById('subject').value,
             message: document.getElementById('message').value
         };
@@ -168,8 +167,8 @@ window.addEventListener('scroll', () => {
 });
 
 // Console greeting
-console.log('%c🇲🇦 Welcome to NOMA - Network of Moroccans in America 🇺🇸', 
-    'color: #C1272D; font-size: 20px; font-weight: bold;');
-console.log('%cBuilding bridges, fostering community, celebrating heritage', 
-    'color: #006233; font-size: 14px;');
+console.log('%c✨ Welcome to NOMA - Network of Moroccans in America', 
+    'color: #D4AF37; font-size: 20px; font-weight: bold;');
+console.log('%cA distinguished community celebrating heritage', 
+    'color: #4A90A4; font-size: 14px;');
 
